@@ -12,11 +12,11 @@ phases:
       - echo log in to Amazon ECR...
       - aws --version
       - echo $AWS_DEFAULT_REGION
-                  aws ecr get-login-password \
-            --region <region> \
+                          aws ecr get-login-password \
+            --region eu-north-1 \
         | docker login \
             --username AWS \
-            --password-stdin <aws_account_id>.dkr.ecr.<region>.amazonaws.com
+            --password-stdin 021891571659.dkr.ecr.eu-north-1.amazonaws.com
       
       - REPOSITORY_URI=021891571659.dkr.ecr.eu-north-1.amazonaws.com/aws-ecs-docker
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
